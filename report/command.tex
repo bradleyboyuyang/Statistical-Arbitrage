@@ -1,0 +1,121 @@
+% for table with diagonal box
+\usepackage{diagbox}
+
+% for writing pusedo-code
+\usepackage[algo2e,vlined,ruled]{algorithm2e}
+
+% for code
+\usepackage{listings}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+% \lstset{basicstyle=\footnotesize, numbers=left,numberstyle=\tiny, keywordstyle=\color{blue}, frame=single, extendedchars=false, xleftmargin=2em, xrightmargin=2em, aboveskip=1em, showspaces=false, commentstyle=\color{dkgreen}, stringstyle=\color{mauve}}
+\lstset{ %
+  language=Octave,                % the language of the code
+  basicstyle=\scriptsize,           % the size of the fonts that are used for the code
+  numbers=left,                   % where to put the line-numbers
+  numberstyle=\tiny\color{gray},  % the style that is used for the line-numbers
+  stepnumber=1,                   % the step between two line-numbers. If it's 1, each line 
+                                  % will be numbered
+  numbersep=5pt,                  % how far the line-numbers are from the code
+  backgroundcolor=\color{white},      % choose the background color. You must add \usepackage{color}
+  showspaces=false,               % show spaces adding particular underscores
+  showstringspaces=false,         % underline spaces within strings
+  showtabs=false,                 % show tabs within strings adding particular underscores
+  frame=single,                   % adds a frame around the code
+  rulecolor=\color{black},        % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. commens (green here))
+  tabsize=2,                      % sets default tabsize to 2 spaces
+  captionpos=b,                   % sets the caption-position to bottom
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  title=\lstname,                   % show the filename of files included with \lstinputlisting;
+                                  % also try caption instead of title
+  keywordstyle=\color{blue},          % keyword style
+  commentstyle=\color{dkgreen},       % comment style
+  stringstyle=\color{mauve},         % string literal style
+  escapeinside={\%*}{*)},            % if you want to add LaTeX within your code
+  morekeywords={*,...},               % if you want to add more keywords to the set
+  xleftmargin=2em,
+  xrightmargin=2em,
+  aboveskip=1em,
+  belowskip=0em
+}
+
+
+
+% for table
+\usepackage{tabularx}
+\usepackage{graphicx}
+% \usepackage{booktabs}
+%  \usepackage{makecell}
+ \usepackage{float}
+%  \newcommand{\diff}{\,\mathrm{d}}
+% \usepackage[margin=1in]{geometry}
+% \usepackage{fancyhdr}
+% \pagestyle{fancy}
+% \usepackage{extarrows}
+% \usepackage{breqn}
+% % \usepackage[colorlinks,linkcolor=black]{hyperref}
+% \usepackage[colorlinks,linkcolor=blue]{hyperref} % 如果想要目录的颜色是蓝色那就用blue
+% \newcommand{\N}{\mathbb{N}}
+% \newcommand{\Z}{\mathbb{Z}}
+% \newcommand{\trans}{^{\mathrm T}}
+% \usepackage{amssymb}
+% \usepackage[table]{xcolor}
+% \usepackage{bm}
+% \usepackage{array}
+% \usepackage{mathtools}
+% \usepackage[english]{babel}
+% \usepackage{natbib}
+% \usepackage{url}
+% \usepackage[utf8x]{inputenc}
+% \usepackage{amsmath}
+% \graphicspath{{images/}}
+% \usepackage{parskip}
+% \usepackage{fancyhdr}
+% \usepackage{vmargin}
+% \usepackage[font={bf, footnotesize}, textfont=md]{caption}
+% \usepackage{amsmath,amsthm,amssymb}
+
+
+% \newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+% \newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+% \newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+% \newenvironment{reflection}[2][Reflection]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+% \newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+% \newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+% \DeclareMathOperator{\tr}{tr}
+% \DeclareMathOperator{\rank}{rank}
+% \DeclareMathOperator{\Span}{span}
+% \DeclareMathOperator{\row}{row}
+% \DeclareMathOperator{\col}{col}
+% \DeclareMathOperator{\range}{range}
+% \DeclarePairedDelimiterX{\inp}[2]{\langle}{\rangle}{#1, #2}
+% \DeclareMathOperator{\Proj}{Proj}
+% \DeclareMathOperator{\trace}{trace}
+% \newcommand{\Her}{^{\mathrm H}}
+% \DeclareMathOperator{\diag}{diag}
+% \makeatletter 
+%     \newcommand\fcaption{\def\@captype{table}\caption}
+% \makeatother
+% \setmarginsrb{2.5 cm}{1.5 cm}{2.5 cm}{1.5 cm}{1 cm}{1 cm}{1 cm}{1 cm}
+
+
+% \makeatletter
+% \let\thetitle\@title
+% \let\theauthor\@author
+% \let\thedate\@date
+% \makeatother
+
+% \pagestyle{fancy}
+% \fancyhf{}
+% \rhead{\theauthor}
+% \lhead{\thetitle}
+% \cfoot{\thepage}
