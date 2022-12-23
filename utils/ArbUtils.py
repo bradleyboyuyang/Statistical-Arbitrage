@@ -100,7 +100,7 @@ def granger_cointegration_test(y, x):
     assert sum(x.isnull()) == 0, 'Input series x has nan-values. Unhandled case.'
     assert y.index.equals(x.index), 'The two input series y and x do not have the same index.'
     
-    c, gamma, alpha, z = estimate_long_run_short_run_relationships(y, x)
+    c, gamma, alpha, z = fit_ols(y, x)
     
     # NOTE: The p-value returned by the adfuller function assumes we do not estimate z first, but test 
     # stationarity of an unestimated series directly. This assumption should have limited effect for high N, 
