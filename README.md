@@ -27,10 +27,8 @@ In this project we provide a backtesting pipeline for intraday statistical arbit
 
 
 #### PnL Visualization
-<img src="./report/figures/all_pnl_before.png" width="700">
-
-
 <img src="./report/figures/all_pnl_after.png" width="700">
+<img src="./report/figures/all_pnl_before.png" width="700">
 
 ## Note
 - Higher the transaction costs, larger the optimal entry points for arbitrage, lower the trading frequency.
