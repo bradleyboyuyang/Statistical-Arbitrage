@@ -3,8 +3,28 @@
 data/
 
 tools/
-report/
 test/
+
+*.tex
+*.txt
+*.bib
+*.bbl
+*.blg
+*.gz
+*.sty
+
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
