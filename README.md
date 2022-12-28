@@ -5,16 +5,27 @@ In this project we provide a backtesting pipeline for intraday statistical arbit
 - `data`: intraday data files, including stocks, options, and dual listing stocks
 - `utils`: arbitrage tool functions including cointegration tests and regression analysis
 - `models`: simulations and parameter estimations for stochastic models and option greeks
-- `statistical_arbitrage.ipynb`: notebook for realizing pair trading based on limit orderbook stock data
+  - `BM.py`: brownian motion related functions
+  - `Vasicek.py`: OU-process related functions
+- `statistical_arbitrage`: notebook for realizing pair trading based on limit orderbook stock data
+- `res`: results for positions, thresholds, and PnLs
 
+
+## Backtesting
+### Spread Portfolios
 <img src="./report/figures/res_HH_JJ.png" width="650">
 
+### Threshold Analysis
 <img src="./report/figures/res_thre_BB_HH.png" width="650">
 
+### Position Analysis
+Higher the transaction costs, larger the optimal entry points for arbitrage, lower the trading frequency.
 <img src="./report/figures/pos_DD_HH.png" width="650">
 
 <img src="./report/figures/pos_BB_JJ.png" width="650">
 
-<img src="./report/figures/pnl_AA_II.png" width="650">
+### PnL Visualization
+Sensitivity analysis can be conducted with respect to the level of transaction costs (price impact, bid-ask spread, commission fees).
+<img src="./report/figures/all_pnl_before.png" width="650">
 
 <img src="./report/figures/all_pnl_after.png" width="650">
