@@ -13,4 +13,8 @@ In this project we provide a backtesting pipeline for intraday statistical arbit
 
 <img src="./report/figures/pos_DD_HH.png" width="650">
 
+<img src="./report/figures/pos_BB_JJ.png" width="650">
+
+<img src="./report/figures/pnl_AA_II.png" width="650">
+
 <img src="./report/figures/all_pnl_after.png" width="650">
