@@ -5,7 +5,7 @@ _norm_cdf = stats.norm(0, 1).cdf
 _norm_pdf = stats.norm(0, 1).pdf
 
 def gbm(S, T, r, sigma):
-    return S*np.exp((r-0.5*sigma**2)*T + sigma*np.sqrt(T))
+    return S*np.exp((r-0.5*sigma**2)*T + sigma*np.sqrt(T)*np.random.normal())
 
 
 def _d1(S, K, T, r, sigma):
@@ -84,7 +84,7 @@ def put_value(S, K, T, r, sigma):
 def call_delta(S, K, T, r, sigma):
     '''
     The delta, i.e. the first derivative of the option value with respect to the underlying, 
-    of a call option paying max(S-K, 0) at expiry, under the Black-scholes model, for an option 
+    of a call option paying max(S_T-K, 0) at expiry, under the Black-scholes model, for an option 
     with strike <K>, expiring in <T> years, under a fixed interest rate <r>, a stock 
     volatility <sigma>, and when the current price of the underlying stock is <S>.
         
@@ -112,14 +112,14 @@ def call_delta(S, K, T, r, sigma):
     '''
     
     # return _norm_cdf(_d1(S, K, T, r, sigma))
-    S_T = call_value(S, K, T, r, sigma)
+    S_T = gbm(S, T, r, sigma)
     return max(S_T-K, 0)*np.exp(-r*T)*S_T/S
 
 
 def put_delta(S, K, T, r, sigma):
     '''
     The delta, i.e. the first derivative of the option value with respect to the underlying, 
-    of a put option paying max(K-S, 0) at expiry, under the Black-scholes model, for an option 
+    of a put option paying max(K-S_T, 0) at expiry, under the Black-scholes model, for an option 
     with strike <K>, expiring in <T> years, under a fixed interest rate <r>, a stock 
     volatility <sigma>, and when the current price of the underlying stock is <S>.
         
@@ -147,8 +147,8 @@ def put_delta(S, K, T, r, sigma):
     '''
     
     # return call_delta(S, K, T, r, sigma) - 1
-    P_T = put_value(S, K, T, r, sigma)
-    return max(K-P_T, 0)*np.exp(-r*T)*P_T/S
+    S_T = gbm(S, T, r, sigma)
+    return max(K-S_T, 0)*np.exp(-r*T)*S_T/S
 
 
 def call_vega(S, K, T, r, sigma):
@@ -181,7 +181,9 @@ def call_vega(S, K, T, r, sigma):
         The fair present value of the option.   
     '''
     
-    return S * _norm_pdf(_d1(S, K, T, r, sigma)) * np.sqrt(T)
+    # return S * _norm_pdf(_d1(S, K, T, r, sigma)) * np.sqrt(T)
+    S_T = gbm(S, T, r, sigma)
+    return max(S_T-K, 0)*np.exp(-r*T)*S_T*((np.log(S_T/S)-(r+0.5*sigma**2)*T)/sigma)
 
 
 def put_vega(S, K, T, r, sigma):
@@ -214,4 +216,6 @@ def put_vega(S, K, T, r, sigma):
         The fair present value of the option.   
     '''
     
-    return call_vega(S, K, T, r, sigma)
+    # return call_vega(S, K, T, r, sigma)
+    S_T = gbm(S, T, r, sigma)
+    return max(K-S_T, 0)*np.exp(-r*T)*S_T*((np.log(S_T/S)-(r+0.5*sigma**2)*T)/sigma)
