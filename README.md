@@ -19,13 +19,16 @@ In this project we provide a backtesting pipeline for intraday statistical arbit
 <img src="./report/figures/res_thre_BB_HH.png" width="650">
 
 ### Position Analysis
-Higher the transaction costs, larger the optimal entry points for arbitrage, lower the trading frequency.
-<img src="./report/figures/pos_DD_HH.png" width="650">
-
 <img src="./report/figures/pos_BB_JJ.png" width="650">
 
+Higher the transaction costs, larger the optimal entry points for arbitrage, lower the trading frequency.
+
+<img src="./report/figures/pos_DD_HH.png" width="650">
+
+
 ### PnL Visualization
-Sensitivity analysis can be conducted with respect to the level of transaction costs (price impact, bid-ask spread, commission fees).
 <img src="./report/figures/all_pnl_before.png" width="650">
+
+Sensitivity analysis can be conducted with respect to the level of transaction costs (price impact, bid-ask spread, commission fees).
 
 <img src="./report/figures/all_pnl_after.png" width="650">
