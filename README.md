@@ -7,6 +7,7 @@ In this project we provide a backtesting pipeline for intraday statistical arbit
 - `models`: simulations and parameter estimations for stochastic models and option greeks
   - `BM.py`: brownian motion related functions
   - `Vasicek.py`: OU-process related functions
+  - `BS_model.py`: Black-Scholes model and option greeks
 - `statistical_arbitrage`: notebook for realizing pair trading based on limit orderbook stock data
 - `res`: results for positions, thresholds, and PnLs
 
