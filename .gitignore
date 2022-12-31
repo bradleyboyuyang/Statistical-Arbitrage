@@ -1,9 +1,10 @@
 # ignore some folders
+arb.md
 
 data/
-
 papers/
 test/
+arbUtils/
 
 *.tex
 *.txt
